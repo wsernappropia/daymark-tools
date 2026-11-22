@@ -13,17 +13,19 @@
       <div class="links"><a href="support.html">Support</a></div>
     </nav>
     <main class="content">
-      <span class="eyebrow">Effective 19 October 2026</span>
+      <span class="eyebrow">Effective 22 November 2026</span>
       <h1>Privacy policy</h1>
-      <p>Daymark Tools publishes local-first browser extensions. Product data is stored in Chrome's local extension storage and is not synchronized by Daymark Tools. We do not sell user data, use it for advertising, or include third-party analytics at launch.</p>
+      <p>Daymark Tools publishes local-first browser extensions. Invoice PDFs, filenames, the filing index, settings and the license key stay in Chrome’s local extension storage (<code>chrome.storage.local</code>) on the user’s device. Daymark Tools does not operate its own sync service and does not receive that data. We do not sell user data, use it for advertising, or include third-party analytics.</p>
       <h2>Invoice Filing Assistant</h2>
-      <p>The extension reads user-initiated PDF download metadata and a PDF URL selected by the user. It stores a local index containing the filename, source URL, download identifier, status and timestamps. It does not upload PDF content or the local index.</p>
+      <p>The extension reads metadata from a user-initiated PDF download (the filename and source URL) and, when the user clicks “File a PDF from this page,” a PDF link URL on the active tab. It may also read the <code>Content-Type</code> of a short list of candidate links to see whether a file that does not end in <code>.pdf</code> is still a PDF. It stores a local index containing the filename, source URL, download identifier, status, timestamps and a needs-review flag, plus an enabled/disabled setting. No PDF content, invoice document, filename or local index leaves the device. Daymark Tools never receives that data.</p>
+      <h2>Trial state and Chrome sync</h2>
+      <p>If Chrome sync is turned on, Invoice Filing Assistant stores only the trial start time and the number of trial filings in <code>chrome.storage.sync</code>. That is so a reinstall, or another Chrome profile signed into the same account, does not reset the trial. The license key, filing index, settings and invoice files are not written to Chrome sync. If Chrome sync is off, or the sync API is unavailable, those two trial fields stay on the device only.</p>
       <h2>ApplicationGuard</h2>
       <p>The extension stores eligible browser-form values locally so the user can preview and explicitly restore them. Passwords, payment-card fields, one-time codes, hidden fields, file contents, secrets and token-like fields are excluded. A user-requested receipt downloads a visible-tab screenshot and a JSON manifest with a SHA-256 hash. The receipt is not proof that a third-party website accepted a submission.</p>
-      <h2>Licensing</h2>
-      <p>When live licensing is enabled, explicit license activation sends a user-entered license key, random installation identifier and product identifier to Lemon Squeezy. Page content, documents, form values, screenshots and download history are not sent with license requests.</p>
+      <h2>Licensing and checkout</h2>
+      <p>Dodo Payments is the merchant of record for Invoice Filing Assistant. It is used only for checkout and for license activation, validation and deactivation. If you buy a license or enter a key, the extension sends the license key and a device name (the product name plus “Chrome”) to Dodo Payments. It does not send PDF contents, invoice data, filenames, the local index, settings, trial fields or browsing history with those requests. Checkout itself takes place on Dodo Payments’ site. A licensed device that cannot reach Dodo Payments keeps access for 48 hours.</p>
       <h2>Retention and control</h2>
-      <p>Local product data remains until the user deletes it, clears browser storage or uninstalls the extension. Chrome Web Store and Lemon Squeezy process their own service data under their respective policies.</p>
+      <p>Local product data remains until the user deletes it, clears browser storage or uninstalls the extension. Synced trial fields remain until the user turns off Chrome sync or clears sync data for the extension. You can deactivate a license from the extension popup, which asks Dodo Payments to release that device. Chrome Web Store, Chrome sync and Dodo Payments process their own service data under their respective policies.</p>
       <h2>Contact</h2>
       <p>Email <a href="mailto:daymarktools@proton.me">daymarktools@proton.me</a>.</p>
     </main>
